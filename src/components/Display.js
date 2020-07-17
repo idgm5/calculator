@@ -3,7 +3,11 @@ import PropTypes from 'prop-types';
 
 class Display extends React.Component {
   render() {
-    return <h1>{this.props.result}</h1>;
+    return (
+      <div class="display">
+        <h1>{this.props.result}</h1>
+      </div>
+    );
   }
 }
 
