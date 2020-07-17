@@ -7,32 +7,32 @@ class ButtonPanel extends React.Component {
     return (
       <div>
         <div>
-          <Button buttonName="AC"/>
-          <Button buttonName="+/-"/>
-          <Button buttonName="%"/>
+          <Button color="#e0e0e0" buttonName="AC"/>
+          <Button color="#e0e0e0" buttonName="+/-"/>
+          <Button color="#e0e0e0" buttonName="%"/>
           <Button buttonName="÷"/>
         </div>
         <div>
-          <Button buttonName="7"/>
-          <Button buttonName="8"/>
-          <Button buttonName="9"/>
+          <Button color="#e0e0e0" buttonName="7"/>
+          <Button color="#e0e0e0" buttonName="8"/>
+          <Button color="#e0e0e0" buttonName="9"/>
           <Button buttonName="X"/>
         </div>
         <div>
-          <Button buttonName="4"/>
-          <Button buttonName="5"/>
-          <Button buttonName="6"/>
+          <Button color="#e0e0e0"  buttonName="4"/>
+          <Button color="#e0e0e0" buttonName="5"/>
+          <Button color="#e0e0e0" buttonName="6"/>
           <Button buttonName="-"/>
         </div>
         <div>
-          <Button buttonName="1"/>
-          <Button buttonName="2"/>
-          <Button buttonName="3"/>
+          <Button color="#e0e0e0" buttonName="1"/>
+          <Button color="#e0e0e0" buttonName="2"/>
+          <Button color="#e0e0e0" buttonName="3"/>
           <Button buttonName="+"/>
         </div>
         <div>
-          <Button buttonName="0"/>
-          <Button buttonName="."/>
+          <Button color="#e0e0e0" wide="true" buttonName="0"/>
+          <Button color="#e0e0e0" buttonName="."/>
           <Button buttonName="="/>
         </div>
       </div>
