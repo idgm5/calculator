@@ -32,4 +32,6 @@ body {
 
 .buttonPanel button {
   height: 100%;
+  border: 1px solid lightgray;
+  font-size: 20px;
 }
