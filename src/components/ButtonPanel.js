@@ -5,7 +5,7 @@ import Button from './Button';
 class ButtonPanel extends React.Component {
   render() {
     return (
-      <div>
+      <div class="buttonPanel">
         <div>
           <Button color="#e0e0e0" buttonName="AC"/>
           <Button color="#e0e0e0" buttonName="+/-"/>

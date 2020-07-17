@@ -25,3 +25,11 @@ body {
   font-size: 43px;
   padding: 0 1rem;
 }
+
+.buttonPanel > div {
+  height: 100px;
+}
+
+.buttonPanel button {
+  height: 100%;
+}
