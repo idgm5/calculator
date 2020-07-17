@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 class Button extends React.Component {
   render() {
-    return <button>{'string' + this.props.buttonName}</button>;
+    return <button>{this.props.buttonName}</button>;
   }
 }
 
