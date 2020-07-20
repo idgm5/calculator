@@ -10,12 +10,13 @@ class Button extends React.Component {
     const { buttonName } = this.props;
 
     let buttonWidth = '25%';
-    if (this.props.wide === 'true') {
+    if (wide === 'true') {
       buttonWidth = '50%';
     }
     return (
       <button
-        wide={wide}
+        type="button"
+        wide={ wide }
         style={{
           backgroundColor: color,
           width: buttonWidth,
@@ -29,11 +30,14 @@ class Button extends React.Component {
 
 Button.propTypes = {
   buttonName: PropTypes.string,
+  color: PropTypes.string,
+  wide: PropTypes.bool,
 };
 
 Button.defaultProps = {
   color: 'orange',
   wide: false,
+  buttonName: 'buttonName',
 };
 
 export default Button;
