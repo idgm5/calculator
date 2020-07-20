@@ -17,7 +17,11 @@ const Operate = (numberOne, numberTwo, operation) => {
   }
 
   if (operation === '/') {
-    return one.div(two);
+    if(two === 0){
+      return 0;
+    } else {
+      return one.div(two);
+    }
   }
 
   if (operation === '%') {
