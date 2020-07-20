@@ -17,16 +17,17 @@ const Operate = (numberOne, numberTwo, operation) => {
   }
 
   if (operation === '/') {
-    if(two === 0){
+    if (two === 0) {
       return 0;
-    } else {
-      return one.div(two);
     }
+    return one.div(two);
   }
 
   if (operation === '%') {
     return one.mod(two);
   }
+
+  return 'Error';
 };
 
 export default Operate;

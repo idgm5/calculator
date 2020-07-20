@@ -1,16 +1,16 @@
 import Operate from './operate';
 
 const Calculate = ({
-  total,
+  operation,
   next,
-  operation
+  total,
 }, buttonName) => {
   if (buttonName === 'AC') {
     return {
       total: null,
       next: null,
-      operation: null
-    }
+      operation: null,
+    };
   }
 
   if (buttonName === '+/-') {
@@ -18,98 +18,98 @@ const Calculate = ({
       return {
         total,
         next: (parseFloat(next) * -1).toString(),
-        operation
-      }
+        operation,
+      };
     }
     if (total && !next) {
       return {
         total: (parseFloat(total) * -1).toString(),
         next,
-        operation
-      }
+        operation,
+      };
     }
     return {
       total,
       next,
-      operation
-    }
+      operation,
+    };
   }
   if (buttonName === '%') {
     if (operation && next) {
       return {
-        total: operate(parseFloat(total), 100, '%').toString(),
+        total: Operate(parseFloat(total), 100, '%').toString(),
         next,
-        operation
-      }
+        operation,
+      };
     }
 
     if (next) {
       return {
         total,
-        next: operate(parseFloat(next), 100, '%').toString(),
-        operation
-      }
+        next: Operate(parseFloat(next), 100, '%').toString(),
+        operation,
+      };
     }
     return {
       total,
       next,
-      operation
-    }
+      operation,
+    };
   }
 
   if (buttonName === '÷') {
     if (operation && next) {
       return {
-        total: operate(parseFloat(total), 100, '/').toString(),
+        total: Operate(parseFloat(total), 100, '/').toString(),
         next,
-        operation
-      }
+        operation,
+      };
     }
 
     if (next) {
       return {
         total,
-        next: operate(parseFloat(next), 100, '/').toString(),
-        operation
-      }
+        next: Operate(parseFloat(next), 100, '/').toString(),
+        operation,
+      };
     }
 
     return {
       total,
       next,
-      operation
-    }
+      operation,
+    };
   }
 
   if (typeof buttonName === 'number') {
     if (next) {
       return {
         total,
-        next: `${next}${buttonName}`,
-        operation
-      }
+        next: next + buttonName,
+        operation,
+      };
     }
     return {
       total,
-      next: `${buttonName}`,
-      operation
-    }
+      next: buttonName,
+      operation,
+    };
   }
 
   if (buttonName === '=') {
     if (next && total) {
       return {
-        total: operate(parseFloat(total), parseFloat(next), operation).toString(),
+        total: Operate(parseFloat(total), parseFloat(next), operation).toString(),
         next,
-        operation
-      }
+        operation,
+      };
     }
 
     return {
       total,
       next,
-      operation
-    }
+      operation,
+    };
   }
 
   if (buttonName === '.') {
@@ -117,21 +117,21 @@ const Calculate = ({
       return {
         total,
         next: `${next}.`,
-        operation
-      }
+        operation,
+      };
     }
     return {
       total,
       next: '0.',
-      operation
-    }
+      operation,
+    };
   }
 
   return {
     total,
     next,
-    operation
-  }
+    operation,
+  };
 };
 
 export default Calculate;
