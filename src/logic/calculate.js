@@ -3,7 +3,7 @@ import Operate from './operate';
 const Calculate = ({
   total,
   next,
-  operation
+  operation,
 }, buttonName) => {
   if (buttonName === 'AC') {
     return {
