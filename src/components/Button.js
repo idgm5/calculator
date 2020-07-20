@@ -16,7 +16,7 @@ class Button extends React.Component {
     return (
       <button
         type="button"
-        wide={ wide }
+        wide={wide}
         style={{
           backgroundColor: color,
           width: buttonWidth,
