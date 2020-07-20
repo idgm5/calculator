@@ -1,6 +1,10 @@
 import Operate from './operate';
 
-const Calculate = ({total,next,operation}, buttonName) => {
+const Calculate = ({
+  total,
+  next,
+  operation
+}, buttonName) => {
   if (buttonName === 'AC') {
     return {
       total: null,
@@ -9,99 +13,125 @@ const Calculate = ({total,next,operation}, buttonName) => {
     }
   }
 
-  if (buttonName === '+/-'){
-    if(next){
+  if (buttonName === '+/-') {
+    if (next) {
       return {
         total,
         next: (parseFloat(next) * -1).toString(),
-        operation,
+        operation
       }
     }
-    if(total && !next){
+    if (total && !next) {
       return {
         total: (parseFloat(total) * -1).toString(),
         next,
-        operation,
+        operation
       }
     }
     return {
       total,
       next,
-      operation,
+      operation
     }
   }
   if (buttonName === '%') {
-    if(operation && next){
+    if (operation && next) {
       return {
         total: operate(parseFloat(total), 100, '%').toString(),
         next,
-        operation,
+        operation
       }
     }
 
-    if(next){
+    if (next) {
       return {
         total,
         next: operate(parseFloat(next), 100, '%').toString(),
-        operation,
+        operation
       }
     }
-
     return {
       total,
       next,
-      operation,
+      operation
     }
   }
 
   if (buttonName === '÷') {
-    if(operation && next){
+    if (operation && next) {
       return {
         total: operate(parseFloat(total), 100, '/').toString(),
         next,
-        operation,
+        operation
       }
     }
 
-    if(next){
+    if (next) {
       return {
         total,
         next: operate(parseFloat(next), 100, '/').toString(),
-        operation,
+        operation
       }
     }
 
     return {
       total,
       next,
-      operation,
+      operation
     }
   }
 
-  if(typeof buttonName === 'number'){
+  if (typeof buttonName === 'number') {
+    if (next) {
+      return {
+        total,
+        next: `${next}${buttonName}`,
+        operation
+      }
+    }
     return {
       total,
-      next: next ? `${next}${buttonName}` : `${buttonName}`,
-      operation,
+      next: `${buttonName}`,
+      operation
     }
   }
 
-  if(buttonName === '='){
-    if(next && total){
+  if (buttonName === '=') {
+    if (next && total) {
       return {
         total: operate(parseFloat(total), parseFloat(next), operation).toString(),
         next,
-        operation.
+        operation
       }
     }
 
     return {
       total,
       next,
-      operation,
+      operation
     }
   }
 
+  if (buttonName === '.') {
+    if (next) {
+      return {
+        total,
+        next: `${next}.`,
+        operation
+      }
+    }
+    return {
+      total,
+      next: '0.',
+      operation
+    }
+  }
+
+  return {
+    total,
+    next,
+    operation
+  }
 };
 
 export default Calculate;
