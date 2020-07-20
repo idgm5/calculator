@@ -1,10 +1,21 @@
+/* eslint-disable  react/prefer-stateless-function */
+
 import React from 'react';
 import PropTypes from 'prop-types';
 
 class Button extends React.Component {
   render() {
-    return <button>{this.props.buttonName}</button>;
+    const { buttonName } = this.props;
+    return <button type="button">{buttonName}</button>;
   }
 }
+
+Button.propTypes = {
+  buttonName: PropTypes.string,
+};
+
+Button.defaultProps = {
+  buttonName: 'ButtonName',
+};
 
 export default Button;
