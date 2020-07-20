@@ -1,9 +1,9 @@
 import Operate from './operate';
 
 const Calculate = ({
-  operation,
-  next,
   total,
+  next,
+  operation
 }, buttonName) => {
   if (buttonName === 'AC') {
     return {
