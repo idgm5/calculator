@@ -4,22 +4,40 @@ import Display from './Display';
 import ButtonPanel from './ButtonPanel';
 import Calculate from '../logic/calculate';
 
-function App() {
-  {
-    total: null,
-    next: null,
-    operation: null,
+let currentResult = null;
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      total: null,
+      next: null,
+      operation: null,
+    };
+
+    this.handleClick = this.handleClick.bind(this);
   }
 
-  return ( <
-    div id = "container" >
-    <
-    Display / >
-    <
-    ButtonPanel / >
-    <
-    /div>
-  );
-}
+  handleClick(buttonName) {
+    const {
+      total,
+      next,
+      operation
+    } = this.state;
+    this.setState(Calculate({
+      total,
+      next,
+      operation
+    }, buttonName));
+  };
 
+  render() {
+    return (
+      <div id="container">
+      <Display result = { currentResult }/ >
+      <ButtonPanel onClick = {this.handleClick }/>
+      </div>
+    );
+  }
+}
 export default App;
