@@ -4,8 +4,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class Button extends React.Component {
-  handleClick(buttonName) {
-    return this.props.clickHandler(buttonName);
+  handleClick = () => {
+    return this.props.clickHandler(this.props.buttonName);
   };
   render() {
     const { wide } = this.props;

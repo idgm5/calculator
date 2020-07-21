@@ -81,7 +81,7 @@ const Calculate = ({
     };
   }
 
-  if (typeof buttonName === 'number') {
+  if (buttonName.match(/[0-9]/)) {
     if (next) {
       return {
         total,
