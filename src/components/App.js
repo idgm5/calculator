@@ -1,3 +1,6 @@
+/* eslint-disable import/no-named-as-default */
+/* eslint-disable import/no-named-as-default-member */
+
 import React from 'react';
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
@@ -16,20 +19,18 @@ class App extends React.Component {
   }
 
   handleClick(buttonName) {
-    this.setState(Calculate(this.state, buttonName));
-  };
+    const { total, next, operation } = this.state;
+    this.setState(Calculate({ total, next, operation }, buttonName));
+  }
 
   render() {
-    return ( <
-      div id = "container" >
-      <
-      Display result={this.state.total || this.state.next  || "0"}
-      / > <
-      ButtonPanel clickHandler = {
-        this.handleClick
-      }
-      /> <
-      /div>
+    const { total } = this.state;
+    const { next } = this.state;
+    return (
+      <div id="container">
+        <Display result={total || next || '0'} />
+        <ButtonPanel clickHandler={this.handleClick} />
+      </div>
     );
   }
 }

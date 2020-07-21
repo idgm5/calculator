@@ -18,28 +18,28 @@ const Calculate = ({
       return {
         total: next,
         next: null,
-        operation: buttonName
-      }
+        operation: buttonName,
+      };
     }
     if (total && !next) {
       return {
         total,
         next,
-        operation: buttonName
-      }
+        operation: buttonName,
+      };
     }
     if (total && next) {
       return {
         total: Operate(parseFloat(total), parseFloat(next), operation).toString(),
         next,
-        operation
-      }
+        operation,
+      };
     }
     return {
       total,
       next,
-      operation
-    }
+      operation,
+    };
   }
 
   if (buttonName === '+/-') {
@@ -138,28 +138,28 @@ const Calculate = ({
       return {
         total: next,
         next: null,
-        operation: buttonName
-      }
+        operation: buttonName,
+      };
     }
     if (total && !next) {
       return {
         total,
         next,
-        operation: buttonName
-      }
+        operation: buttonName,
+      };
     }
     if (total && next) {
       return {
         total: Operate(parseFloat(total), parseFloat(next), operation).toString(),
         next,
-        operation
-      }
+        operation,
+      };
     }
     return {
       total,
       next,
-      operation
-    }
+      operation,
+    };
   }
 
   return {

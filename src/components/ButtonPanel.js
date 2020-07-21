@@ -1,10 +1,9 @@
 /* eslint-disable  react/prefer-stateless-function */
-
 import React from 'react';
 import Button from './Button';
 
 class ButtonPanel extends React.Component {
-  handleClick = buttonName => {
+  handleClick = (buttonName) => {
     return this.props.clickHandler(buttonName);
   };
 
