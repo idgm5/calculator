@@ -13,7 +13,14 @@ const Operate = (numberOne, numberTwo, operation) => {
   }
 
   if (operation === 'X') {
-    return one.multiply(two);
+    return one.mul(two);
+  }
+
+  if (operation === '÷') {
+    if (two === 0) {
+      return 0;
+    }
+    return one.div(two);
   }
 
   if (operation === '/') {
