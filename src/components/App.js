@@ -5,11 +5,20 @@ import ButtonPanel from './ButtonPanel';
 import Calculate from '../logic/calculate';
 
 function App() {
-  return (
-    <div id="container">
-      <Display />
-      <ButtonPanel />
-    </div>
+  {
+    total: null,
+    next: null,
+    operation: null,
+  }
+
+  return ( <
+    div id = "container" >
+    <
+    Display / >
+    <
+    ButtonPanel / >
+    <
+    /div>
   );
 }
 
