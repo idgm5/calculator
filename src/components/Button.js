@@ -4,6 +4,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class Button extends React.Component {
+  handleClick(buttonName) {
+    return this.props.clickHandler(buttonName);
+  };
   render() {
     const { wide } = this.props;
     const { color } = this.props;
@@ -21,6 +24,7 @@ class Button extends React.Component {
           backgroundColor: color,
           width: buttonWidth,
         }}
+        onClick={this.handleClick}
       >
         { buttonName }
       </button>
