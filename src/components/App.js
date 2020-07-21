@@ -32,11 +32,18 @@ class App extends React.Component {
   };
 
   render() {
-    return (
-      <div id="container">
-      <Display result = { currentResult }/ >
-      <ButtonPanel onClick = {this.handleClick }/>
-      </div>
+    return ( <
+      div id = "container" >
+      <
+      Display result = {
+        currentResult
+      }
+      / > <
+      ButtonPanel onClick = {
+        this.handleClick
+      }
+      /> <
+      /div>
     );
   }
 }
