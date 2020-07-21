@@ -35,9 +35,7 @@ class App extends React.Component {
     return ( <
       div id = "container" >
       <
-      Display result = {
-        currentResult
-      }
+      Display result={this.state.total || this.state.next  || "0"}
       / > <
       ButtonPanel onClick = {
         this.handleClick
