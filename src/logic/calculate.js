@@ -99,8 +99,8 @@ const Calculate = ({
     if (next && operation) {
       return {
         total: Operate(parseFloat(total), parseFloat(next), operation).toString(),
-        next,
-        operation,
+        next: null,
+        operation: buttonName,
       };
     }
 
