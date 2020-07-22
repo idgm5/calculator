@@ -28,13 +28,6 @@ const Calculate = ({
         operation: buttonName,
       };
     }
-    if (total && next) {
-      return {
-        total: Operate(parseFloat(total), parseFloat(next), operation).toString(),
-        next,
-        operation,
-      };
-    }
     return {
       total,
       next,
@@ -88,21 +81,21 @@ const Calculate = ({
   }
 
   if (buttonName.match(/[0-9]/)) {
-    if (next) {
-      return {
-        total,
-        next: `${next}${buttonName}`,
-        operation,
-      };
-    }
     return {
       total,
-      next: `${buttonName}`,
+      next: next ? `${next}${buttonName}` : `${buttonName}`,
       operation,
     };
   }
 
   if (buttonName === '=') {
+    if (next === '0' && operation === '÷'){
+      return {
+        total: '0',
+        next,
+        operation,
+      };
+    }
     if (next && operation) {
       return {
         total: Operate(parseFloat(total), parseFloat(next), operation).toString(),
@@ -148,19 +141,14 @@ const Calculate = ({
         operation: buttonName,
       };
     }
-    if (total && next) {
-      return {
-        total: Operate(parseFloat(total), parseFloat(next), operation).toString(),
-        next,
-        operation,
-      };
-    }
+
     return {
       total,
       next,
       operation,
     };
   }
+
 
   return {
     total,
