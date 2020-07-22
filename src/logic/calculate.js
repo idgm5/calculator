@@ -89,7 +89,7 @@ const Calculate = ({
   }
 
   if (buttonName === '=') {
-    if (next === '0' && operation === '÷'){
+    if (next === '0' && operation === '÷') {
       return {
         total: '0',
         next,
@@ -148,7 +148,6 @@ const Calculate = ({
       operation,
     };
   }
-
 
   return {
     total,
