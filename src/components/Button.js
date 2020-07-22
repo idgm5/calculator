@@ -3,9 +3,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 class Button extends React.Component {
-  handleClick = () => {
-    return this.props.clickHandler(this.props.buttonName);
-  };
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick() {
+    const { clickHandler } = this.props;
+    const { buttonName } = this.props;
+    clickHandler(buttonName);
+  }
+
   render() {
     const { wide } = this.props;
     const { color } = this.props;
@@ -35,12 +43,14 @@ Button.propTypes = {
   buttonName: PropTypes.string,
   color: PropTypes.string,
   wide: PropTypes.bool,
+  clickHandler: PropTypes.func,
 };
 
 Button.defaultProps = {
   color: 'orange',
   wide: false,
   buttonName: 'buttonName',
+  clickHandler: '0',
 };
 
 export default Button;
